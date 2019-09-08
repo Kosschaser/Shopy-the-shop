@@ -1,3 +1,3 @@
 # Shopy-the-shop
 
-Link: http://shopy.epizy.com/#
+Link: http://shopy.epizy.com
