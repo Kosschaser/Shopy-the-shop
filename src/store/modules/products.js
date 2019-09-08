@@ -57,11 +57,12 @@ const actions = {
   async setPages({commit, state, dispatch}){
     if(state.products.length == 0){
       return dispatch('fetchProducts').then(()=>{
-        const allPages = state.products.length/state.pagination.pageSize;
+        const allPages = Math.ceil(state.products.length/state.pagination.pageSize);
         commit('SET_PAGES', allPages);
       })
     }else{
-      const allPages = state.products.length/state.pagination.pageSize;
+      const allPages = Math.ceil(state.products.length/state.pagination.pageSize);
+      // console.log(allPages);
       commit('SET_PAGES', allPages);
     }
 
@@ -72,20 +73,21 @@ const actions = {
         const currPage = page * state.pagination.pageSize;
         const endPage = currPage + state.pagination.pageSize;
         const finalPage = state.products.slice(currPage, endPage);
-        // console.log(finalPage, currPage, endPage);
+        
         commit('SET_VIEWPAGE', finalPage);
       })
     }else{
       const currPage = page * state.pagination.pageSize;
       const endPage = currPage + state.pagination.pageSize;
       const finalPage = state.products.slice(currPage, endPage);
+      console.log(finalPage, currPage, endPage, Number.isInteger(state.pagination.pageSize));
       commit('SET_VIEWPAGE', finalPage);
     }
   },
   sortProducts({ commit, state, dispatch }, data){
     const prods = state.products;
     const sorter = data.sortBy || '---';
-    const pageSize = data.pageSize || 3;
+    const pageSize = parseInt(data.pageSize) || 3;
     if(sorter){
       if(sorter == 'toExp'){
         prods.sort((a,b)=>{
@@ -111,7 +113,7 @@ const actions = {
     }
     commit('SET_PRODS', prods);
     commit('SET_PAGESIZE', pageSize);
-    dispatch('setPages')
+    dispatch('setPages');
     dispatch('initProducts');
   }
 };
@@ -124,9 +126,8 @@ const mutations = {
     SET_PAGES: (state, pages) => (state.pagination.pages = pages),
     SET_PAGESIZE: (state, size) => (state.pagination.pageSize = size),
     SET_VIEWPAGE: (state, result) => (state.pageProducts = result),
-    SET_LOADING: (state)=>{
-      state.isloading = true;
-    }
+    SET_LOADING: (state)=> (state.isloading = true)
+    
 };
 
 export default {

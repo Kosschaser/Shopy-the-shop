@@ -80,13 +80,13 @@ export default {
     ...mapActions(['initProducts', 'setPages', 'sortProducts']),
     nextPage(){
       this.page++;
-      this.initProducts(this.page, this.pageSize);
+      this.initProducts(this.page);
       const topScroll = document.querySelector('.description__wrapper');
       window.scroll(0, (topScroll.offsetTop + topScroll.offsetHeight));
     },
     prevPage(){
       this.page--;
-      this.initProducts(this.page, this.pageSize);
+      this.initProducts(this.page);
       const topScroll = document.querySelector('.description__wrapper');
       window.scroll(0, (topScroll.offsetTop + topScroll.offsetHeight));
       }
