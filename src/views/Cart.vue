@@ -5,17 +5,23 @@
     </div>
     <div v-else class="cart__wrap container">
       <div class="cart__header">
-        <h6>Products</h6>
-        <div>Color & Size</div>
-        <div>Quantity</div>
-        <div>Price</div>
-        <div>Total</div>
+        <div class="cart__header--main">Products</div>
+        <div class="cart__header--sec">Quantity</div>
+        <div class="cart__header--sec">Price</div>
+        <div class="cart__header--sec">Total</div>
       </div>
       <cart-item
       v-for='item in cartList'
       :data='item'
       :key='item.id'>
       </cart-item>
+      <div class="cart__checkout">
+        <div class="cart__sum">TOTAL: $ {{cartTotalPrice}}</div>
+        <div>
+          <button class="cart__checkout__button">CONTINUE SHOPPING</button>
+          <button class="cart__checkout__button--green cart__checkout__button">PROCEED TO CHEKOUT</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,7 +45,7 @@ export default {
 
   },
   computed:
-    mapGetters(['cartList'])
+    mapGetters(['cartList', 'cartTotalPrice'])
   ,
   mounted(){
     eventBus.$emit('ScrlTop', this.upperScroll); //prevent header from transitioning
@@ -52,6 +58,8 @@ export default {
   padding-top: 46px;
   display: flex;
   flex-grow: 1;
+      margin: 5em auto;
+  font-family: $PoppinsFont;
   &__empty{
     display: flex;
     width: 100%;
@@ -61,7 +69,7 @@ export default {
   }
   &__wrap{
     display: flex;
-    margin: 5em auto;
+
     align-content: flex-start;
     flex-wrap: wrap;
   }
@@ -70,18 +78,64 @@ export default {
     width: 100%;
     justify-content: space-between;
     min-height: 60px;
-    & > div{
-      flex-basis: 0;
-      flex-grow: 1;
-    }
-    & h6{
-      flex-basis: 30%;
-    }
-    & > div, h6{
+    &  div{
       border: $cart-border;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+      &--main{
+      flex-basis: 50%;
+    }
+    &--sec{
+      flex-basis: 16.6%;
+    }
+  }
+  &__checkout{
+    border: $cart-border;
+    border-top: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px 0;
+    flex-direction: column;
+    &__button{
+      font-family: $PoppinsFont;
+      padding: 10px 14px;
+      margin-right: 20px;
+      font-size: 1.1em;
+      color: #fff;
+      border: $cart-border;
+      outline: 0;
+      background-color: #fff;
+      color: #000;
+      transition: .2s all ease;
+      box-sizing: border-box;
+      cursor: pointer;
+      &--green{
+        background-color: $green;
+        color: #fff;
+        &:hover{
+          color: $green;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  &__sum{
+    margin: 0 20px 20px 0;
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .cart{
+    &__header{
+      display: none;
+    }
+    &__empty{
+      font-size: 1.2em;
     }
   }
 }

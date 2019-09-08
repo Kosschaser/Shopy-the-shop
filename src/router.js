@@ -22,6 +22,9 @@ export default new Router({
       path: '/item/:id',
       name: 'itemView',
       component: ItemView
+    },
+    {
+      path: '*', redirect: '/'
     }
   ],
   mode: 'history',

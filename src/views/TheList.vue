@@ -45,7 +45,7 @@
 
 <script>
 
-import prodItem from './item.vue'
+import prodItem from '@/components/products/item.vue'
 import { mapGetters, mapActions } from 'vuex';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faChevronRight, faChevronLeft} from '@fortawesome/free-solid-svg-icons';
@@ -122,6 +122,9 @@ export default {
     }
     &__item{
       margin-left: 15px;
+      & label{
+        margin-right: 15px;
+      }
     }
     &__pagination{
       margin: 0 15px 50px 15px;
@@ -138,6 +141,14 @@ export default {
       &:disabled{
         opacity: .6;
         transform: none;
+      }
+    }
+  }
+
+    @media screen and (max-width: 400px){
+    .main{
+      &__wrapper{
+        justify-content: center;
       }
     }
   }

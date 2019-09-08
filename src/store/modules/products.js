@@ -32,7 +32,6 @@ const actions = {
     .then(
       function(response) {
         if (response.status !== 200) {
-          console.log(response.status);
             return;
           }
           return response.json()
@@ -73,14 +72,13 @@ const actions = {
         const currPage = page * state.pagination.pageSize;
         const endPage = currPage + state.pagination.pageSize;
         const finalPage = state.products.slice(currPage, endPage);
-        console.log(finalPage, currPage, endPage);
+        // console.log(finalPage, currPage, endPage);
         commit('SET_VIEWPAGE', finalPage);
       })
     }else{
       const currPage = page * state.pagination.pageSize;
       const endPage = currPage + state.pagination.pageSize;
       const finalPage = state.products.slice(currPage, endPage);
-      console.log(finalPage, currPage, endPage);
       commit('SET_VIEWPAGE', finalPage);
     }
   },

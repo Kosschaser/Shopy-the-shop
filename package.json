@@ -15,6 +15,7 @@
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-carousel": "^0.18.0",
+    "vue-clickaway": "^2.2.2",
     "vue-images-loaded": "^1.1.2",
     "vue-resource": "^1.5.1",
     "vue-responsive-text": "^0.1.4",

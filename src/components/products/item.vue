@@ -48,7 +48,8 @@ export default {
     return{
       loaderColor: 'green',
       loaderSize: '60px',
-      isImgLoading: true
+      isImgLoading: true,
+
     }
   },
   mounted(){
@@ -92,6 +93,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      line-height: 20px;
     }
     &__buttons{
       position: absolute;

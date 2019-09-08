@@ -7,9 +7,9 @@
         dignissim aliquet quam. register your email for news and special offers
       </p>
         <form class="">
-          <input type="text" class="coupon-input__text" name="email"
+          <input type="text" class="coupon-input__mail" name="email"
           placeholder="E-mail address ...">
-          <input type="button" value="GET COUPON NOW">
+          <input type="button" value="GET COUPON NOW" class="coupon-input__button">
         </form>
     </div>
     <div class="coupon-input__wrapper coupon-input__icons">
@@ -60,7 +60,9 @@ export default {
       display: flex;
       width: 80%;
       align-self: center;
-      & input[type='button']{
+    }
+  }
+  &__button{
         color: #fff;
         font-family: $PoppinsFont;
         border: none;
@@ -69,11 +71,6 @@ export default {
         cursor: pointer;
         padding: 15px 30px;
         margin-left: 10px;
-      }
-      & input[type='text']{
-        padding: 15px 20px;
-      }
-    }
   }
   &__icons{
     display: flex;
@@ -81,14 +78,42 @@ export default {
     justify-content: space-around;
     background-color: $greyish;
   }
-  &__text{
+  &__mail{
     width: 100%;
+    padding: 15px 20px;
   }
 }
 
 @media screen and (max-width: 992px){
   .coupon-input{
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .coupon-input{
+    &__form{
+      & form{
+        width: unset;
+        flex-direction: column;
+        width: 80%;
+      }
+      p{
+        padding: 15px 0;
+      }
+    }
+    &__mail{
+      width: auto;
+      margin-bottom: 15px;
+    }
+    &__button{
+      margin: 0;
+      width: 60%;
+      align-self: center;
+    }
+    &__icons{
+      flex-wrap: wrap;
+    }
   }
 }
 </style>

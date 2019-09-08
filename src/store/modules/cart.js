@@ -5,8 +5,16 @@ const state = {
 };
 
 const getters = {
-  cartList: (state)=> state.cart
-};
+  cartList: (state)=> state.cart,
+  cartTotalPrice: (state) => {
+    return state.cart.map((el)=>{
+      return el.price * el.quantity;
+      }).reduce((initVal, currVal)=>{
+        return initVal + currVal;
+      })
+    }
+  }
+
 
 const actions = {
   updateCart:({commit}, item)=>{

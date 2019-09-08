@@ -76,4 +76,12 @@ export default {
       margin-bottom: 30px;
     }
   }
+
+  @media screen and (max-width: 400px){
+    .description{
+      &__wrapper{
+        flex-direction: column;
+      }
+    }
+  }
 </style>

@@ -10,7 +10,7 @@
 <script>
 
 import Swiper from '@/components/Swiper.vue';
-import List from '@/components/products/TheList.vue';
+import List from './TheList.vue';
 import Description from '@/components/Description.vue'
 import MailCoupon from '@/components/MailCoupon.vue'
 import {eventBus} from '@/main'

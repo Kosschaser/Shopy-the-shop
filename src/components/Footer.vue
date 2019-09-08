@@ -93,6 +93,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    font-family: $PoppinsFont;
     &__smm{
       display: flex;
       justify-content: space-between;
@@ -114,7 +115,6 @@ export default {
     }
     &__section{
       display: flex;
-      font-family: $PoppinsFont;
       flex-direction: column;
       margin: 30px 0 50px 0;
       text-align: left;
@@ -143,7 +143,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       color: grey;
-      padding: 15px 0;
+      padding: 15px;
       & img{
         margin-left: 15px;
       }
@@ -167,5 +167,29 @@ export default {
   }
   .contacts-icon{
     margin-right: 10px;
+  }
+
+  @media screen and (max-width: 400px){
+    .footer{
+      &__smm{
+        flex-direction: column;
+        padding-top: 20px;
+      }
+      &__icons{
+        border: none; 
+      }
+      &__information{
+        flex-wrap: wrap;
+      }
+      &__section{
+        flex-basis: 50%;
+      }
+      &__sign{
+        flex-direction: column-reverse;
+        & div{
+          margin-bottom: 15px;
+        }
+      }
+    }
   }
 </style>

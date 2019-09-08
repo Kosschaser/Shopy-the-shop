@@ -56,6 +56,7 @@ export default {
 <style scoped lang="scss">
   .carousel{
     // height: calc(100% - 80px);
+    line-height: 0;
     &__link{
       display: block;
       position: relative;
@@ -65,6 +66,7 @@ export default {
       }
     }
     &__text{
+      line-height: 50px;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -80,18 +82,28 @@ export default {
       }
       & p{
         width: 60%;
-        font-size: 1.5vw;
+        font-size: 1.5em;
         line-height: 25px;
         color: $blackish;
       }
     }
   }
-  @media screen and (max-width: 1280px){
-  //   .carousel{
-  //     height: 640px;
-  //   }
-  //   img{
-  //     height: 640px;
-  //   }
+  @media screen and (max-width: 1366px){
+    .carousel{
+      &__text{
+        font-size: 70%;
+      }
+    }
+  }
+  @media screen and (max-width: 400px){
+    .carousel{
+      &__text{
+        font-size: 50%;
+        transform: translate(5%, 10%);
+        & p{
+          width: 80%;
+        }
+      }
+    }
   }
 </style>
