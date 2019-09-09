@@ -134,6 +134,15 @@ export default {
     &__header{
       display: none;
     }
+    &__checkout{
+      border-top: $cart-border;
+      &__button{
+        margin: 0;
+        &--green{
+          margin-top: 15px;
+        }
+      }
+    }
     &__empty{
       font-size: 1.2em;
     }

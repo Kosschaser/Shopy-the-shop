@@ -131,7 +131,6 @@ export default {
       display: flex;
       & input{
         font-size: 1.1em;
-        height: 100%;
         text-align: center;
         outline: 0;
         border: none;
@@ -148,7 +147,6 @@ export default {
   }
   .right, .left{
     padding: 0;
-    height: 100%;
     border: none;
     display: flex;
     align-items: center;
