@@ -169,7 +169,7 @@ export default {
     margin-right: 10px;
   }
 
-  @media screen and (max-width: 400px){
+  @media screen and (max-width: 700px){
     .footer{
       &__smm{
         flex-direction: column;

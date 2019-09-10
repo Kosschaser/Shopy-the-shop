@@ -45,7 +45,7 @@ const actions = {
           name: dataLink[i].fields.name.stringValue,
           price: dataLink[i].fields.price.integerValue
         })
-      }
+      } 
           commit('SET_PRODS', result)
           });
         }
@@ -80,7 +80,7 @@ const actions = {
       const currPage = page * state.pagination.pageSize;
       const endPage = currPage + state.pagination.pageSize;
       const finalPage = state.products.slice(currPage, endPage);
-      console.log(finalPage, currPage, endPage, Number.isInteger(state.pagination.pageSize));
+      // console.log(finalPage, currPage, endPage, Number.isInteger(state.pagination.pageSize));
       commit('SET_VIEWPAGE', finalPage);
     }
   },

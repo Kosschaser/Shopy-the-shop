@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main class="main">
     <div class="controls__wrapper container">
       <div class="controls__item">
         <label>Items per page</label>
@@ -40,7 +40,7 @@
       @click='nextPage'
       ><font-awesome-i icon="chevron-right"/></button>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -96,12 +96,15 @@ export default {
 
 <style scoped lang="scss">
   .main{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     &__wrapper{
       display: grid;
       grid-template-columns: repeat(auto-fill, 300px);
       grid-gap: 1rem;
-      justify-content: space-between;
       margin: 50px auto;
+      justify-content: space-between;
     }
   }
   .refresh-btn{

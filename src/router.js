@@ -27,7 +27,7 @@ export default new Router({
       path: '*', redirect: '/'
     }
   ],
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior(){
     return {x: 0, y: 0};
   }

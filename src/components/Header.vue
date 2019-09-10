@@ -168,7 +168,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 700px){
     .header{
       justify-content: space-between;
       &__leftmenu{

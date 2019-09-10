@@ -2,7 +2,7 @@
   <Carousel
     class="carousel"
     :autoplay="true"
-    :autoplayTimeout='7000'
+    :autoplayTimeout='5000'
     :paginationEnabled="false"
     :scrollPerPage="true"
     :perPage="1"
